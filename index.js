@@ -1,23 +1,39 @@
-// function newAsteroid(path, leftPos, bottomPos, backgroundSize) {
-//   const div = document.createElement("div");
-//   div.style.backgroundImage = `url(${path})`;
-//   div.style.width = leftPos + "px";
-//   div.style.height = bottomPos + "px";
-
-//   div.style.backgroundSize = backgroundSize + "px";
-//   div.style.display = "flex";
-//   div.style.alignItems = "center";
-//   div.style.justifyContent = "center";
-
-//   //   const text = document.createElement("h2");
-//   //   text.innerHTML = "Testing Word";
-//   //   div.appendChild(text);
-
-//   document.body.append(div);
-//   return div;
+// #asteroid {
+//   width: 100px;
+//   height: 100px;
+//   background-color: black;
+//   position: relative;
+//   top: 500px;
+//   animation: slide 2s infinite;
 // }
 
-// newAsteroid("assets/asteroid-1.png", 150, 150, 150);
+function newAsteroid(path) {
+  const div = document.createElement("div");
+
+  // setting ID attribute
+  div.setAttribute("id", "asteroid");
+
+  div.style.backgroundImage = `url(${path})`;
+  div.style.width = "100px";
+  div.style.height = "100px";
+  div.style.backgroundSize = "100px";
+  //   div.style.display = "flex";
+  //   div.style.alignItems = "center";
+  //   div.style.justifyContent = "center";
+  div.style.position = "relative";
+  div.style.top = "500px";
+  div.style.animation = "slide 4s infinite";
+
+  //   const text = document.createElement("h2");
+  //   text.innerHTML = "Hello";
+  //   div.appendChild(text);
+
+  document.getElementById("game").appendChild(div);
+  //   document.body.append(div);
+  //   return div;
+}
+
+newAsteroid("assets/asteroid-1.png");
 
 function moveLeft() {
   let left = parseInt(
@@ -50,7 +66,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const block = document.getElementById("block");
+const block = document.getElementById("asteroid");
 block.addEventListener("animationiteration", () => {
   let random = Math.floor(Math.random() * 3);
   left = random * 100;
