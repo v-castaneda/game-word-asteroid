@@ -1,22 +1,20 @@
-function newAsteroid(path) {
+function newAsteroid(filePath) {
   // create div element for asteroid and assign ID
   const div = document.createElement("div");
   div.setAttribute("id", "asteroid");
 
   // set background image of div to asteroid
-  div.style.backgroundImage = `url(${path})`;
+  div.style.backgroundImage = `url(${filePath})`;
 
-  // establish the box size of falling objects
-  div.style.width = "100px";
-  div.style.height = "100px";
-  div.style.backgroundSize = "100px";
+  // set style of falling asteroid
+  const divSize = 100;
+  div.style.width = `${divSize}px`;
+  div.style.height = `${divSize}px`;
+  div.style.backgroundSize = `${divSize}px`;
   div.style.position = "relative";
   div.style.top = "500px";
+  div.style.backgroundRepeat = "no-repeat";
   div.style.animation = "slide 4s infinite";
 
   document.getElementById("game").appendChild(div);
-
-  return {
-    element: element,
-  };
 }
