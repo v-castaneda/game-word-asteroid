@@ -1,23 +1,42 @@
-function newAsteroid(filePath) {
-  // create div element for asteroid and assign ID
-  const div = document.createElement("div");
-  div.setAttribute("id", "asteroid");
+class Asteroid {
+  constructor(filePath) {
+    // create div element for asteroid and assing ID
+    const div = document.createElement("div");
+    div.setAttribute("id", "asteroid");
 
-  // set background image of div to asteroid
-  div.style.backgroundImage = `url(${filePath})`;
+    // set background image of div to asteroid
+    div.style.backgroundImage = `url(${filePath})`;
 
-  // set style of falling asteroid
-  const divSize = 100;
-  div.style.width = `${divSize}px`;
-  div.style.height = `${divSize}px`;
-  div.style.backgroundSize = `${divSize}px`;
-  div.style.position = "relative";
-  div.style.top = "500px";
-  div.style.backgroundRepeat = "no-repeat";
-  div.style.animation = "slide 4s infinite";
+    document.getElementById("game").appendChild(div);
+  }
 
-  document.getElementById("game").appendChild(div);
+  setFallLane(left) {
+    // set css of falling asteroid
+    const object = document.getElementById("asteroid");
+    const divSize = 100;
+    object.style.width = `${divSize}px`;
+    object.style.height = `${divSize}px`;
+    object.style.backgroundSize = `${divSize}px`;
+    object.style.position = `relative`;
+    object.style.top = `500px`;
+    object.style.backgroundRepeat = "no-repeat";
+    object.style.left = `${left}px`;
+    object.style.animation = "slide 4s infinite";
+  }
+
+  // setInterval(function () {
+  //   let ssLeft = parseInt(
+  //     window.getComputedStyle(spaceship).getPropertyValue("left")
+  //   );
+  //   let asteroidLeft = parseInt(
+  //     window.getComputedStyle(asteroid).getPropertyValue("left")
+  //   );
+  //   let asteroidTop = parseInt(
+  //     window.getComputedStyle(asteroid).getPropertyValue("top")
+  //   );
+  //   if (ssLeft === asteroidLeft && asteroidTop < 500 && asteroidTop > 300) {
+  //     alert("Game Over");
+  //     asteroid.style.animation = "none";
+  //   }
+  // }, 1);
 }
-
-const asteroid = document.getElementById("asteroid");
-console.log(asteroid);
