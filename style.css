@@ -7,7 +7,7 @@
   border: 1px solid black;
   box-sizing: border-box;
   width: 1000px;
-  height: 700px;
+  height: 1500px;
   margin: auto;
   background-image: url(/assets/Parallax100.png);
 }
@@ -35,10 +35,10 @@
 } */
 
 @keyframes slide {
-  0% {
+  from {
     top: -100px;
   }
-  1000% {
-    top: 500px;
+  to {
+    top: 1250px;
   }
 }

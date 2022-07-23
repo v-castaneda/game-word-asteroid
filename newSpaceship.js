@@ -13,7 +13,7 @@ function newSpaceship(filePath) {
   div.style.backgroundSize = `${imgSize}px`;
   div.style.position = "relative";
   div.style.left = "500px";
-  div.style.top = "600px";
+  div.style.top = "500px";
   div.style.backgroundRepeat = "no-repeat";
 
   //appending to DOM
