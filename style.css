@@ -4,11 +4,12 @@
 }
 
 #game {
+  border: 1px solid black;
+  box-sizing: border-box;
   width: 1000px;
-  height: 800px;
-  /* border: 1px solid black; */
+  height: 700px;
   margin: auto;
-  /* box-sizing: border-box; */
+  background-image: url(/assets/Parallax100.png);
 }
 
 /* #white {
