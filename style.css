@@ -4,8 +4,8 @@
 }
 
 #game {
-  width: 300px;
-  height: 500px;
+  width: 1000px;
+  height: 800px;
   border: 1px solid black;
   margin: auto;
   box-sizing: border-box;
@@ -19,15 +19,6 @@
   top: 300px;
   left: 100px;
 }
-/* 
-#asteroid {
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  position: relative;
-  top: 500px;
-  animation: slide 2s infinite;
-} */
 
 #white {
   width: 300px;
@@ -46,9 +37,3 @@
     top: 500px;
   }
 }
-
-/* main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-} */
