@@ -42,12 +42,11 @@ class Asteroid {
         ssRect.right < asteroidRect.left ||
         ssRect.left > asteroidRect.right
       );
-      // console.log(collisionFlag);
-
+      console.log(collisionFlag);
       if (collisionFlag) {
         alert("Game Over");
         ss.style.animation = "none";
       }
-    }, 1);
+    }, 100);
   }
 }
