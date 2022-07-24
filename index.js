@@ -1,19 +1,33 @@
 newSpaceship("./assets/ship5.png");
 
 // create list images for falling asteroids
-const images = {
-  img1: "./assets/asteroid-1.png",
-  img2: "./assets/asteroid-2.png",
-  img3: "./assets/asteroid-3.png",
-  img4: "./assets/asteroid-4.png",
-  img5: "./assets/asteroid-5.png",
-  img6: "./assets/asteroid-6.png",
-  img7: "./assets/asteroid-7.png",
-};
+const images = [
+  "./assets/asteroid-1.png",
+  "./assets/asteroid-2.png",
+  "./assets/asteroid-3.png",
+  "./assets/asteroid-4.png",
+  "./assets/asteroid-5.png",
+  "./assets/asteroid-6.png",
+  "./assets/asteroid-7.png",
+];
 
-// identify game with and divide into N lanes
-const gameSize = document.getElementById("game").offsetWidth;
-const numLanes = gameSize / 100;
+// initiate run flag
+let runFlag = true;
 
-const asteroid = new Asteroid(images.img1);
-asteroid.setFallLane(300);
+while (runFlag) {
+  // keep run flag on when no collision
+  const sizeLane = 100;
+  const randLane = Math.floor(Math.random() * 10);
+
+  const randImg = Math.floor(Math.random() * images.length);
+  const asteroid = new Asteroid(images[randImg]);
+  console.log(`sizeLane: ${sizeLane}`);
+  console.log(`randLane: ${randLane}`);
+  console.log(`sizeLane * randLane: ${sizeLane * randLane}`);
+  asteroid.setFallLane(sizeLane * randLane);
+
+  // set run flag to false when collision
+  //   asteroid.collisionDetection();
+
+  runFlag = false;
+}

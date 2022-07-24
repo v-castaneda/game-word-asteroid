@@ -24,19 +24,24 @@ class Asteroid {
     object.style.animation = "slide 4s infinite";
   }
 
-  // setInterval(function () {
-  //   let ssLeft = parseInt(
-  //     window.getComputedStyle(spaceship).getPropertyValue("left")
-  //   );
-  //   let asteroidLeft = parseInt(
-  //     window.getComputedStyle(asteroid).getPropertyValue("left")
-  //   );
-  //   let asteroidTop = parseInt(
-  //     window.getComputedStyle(asteroid).getPropertyValue("top")
-  //   );
-  //   if (ssLeft === asteroidLeft && asteroidTop < 500 && asteroidTop > 300) {
-  //     alert("Game Over");
-  //     asteroid.style.animation = "none";
+  //   collisionDetection() {
+  //     // const ss = document.getElementById("ss");
+  //     // const asteroid = document.getElementById("asteroid");
+  //     // const currLeftSS = ss.style.left;
+  //     // const currLeftAsteroid = asteroid.style.left;
+
+  //     // console.log(currLeftSS);
+  //     // console.log(currLeftAsteroid);
+  //     let ssLeft = parseInt(window.getComputedStyle(ss).getPropertyValue("left"));
+  //     let asteroidLeft = parseInt(
+  //       window.getComputedStyle(asteroid).getPropertyValue("left")
+  //     );
+  //     let asteroidTop = parseInt(
+  //       window.getComputedStyle(asteroid).getPropertyValue("top")
+  //     );
+  //     if (ssLeft === asteroidLeft) {
+  //       alert("Game Over");
+  //       this.asteroid.style.animation = "none";
+  //     }
   //   }
-  // }, 1);
 }
