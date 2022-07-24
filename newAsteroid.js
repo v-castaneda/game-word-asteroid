@@ -19,30 +19,35 @@ class Asteroid {
     object.style.backgroundSize = `${divSize}px`;
     object.style.position = `relative`;
     object.style.top = `500px`;
+    object.style.padding = 0;
+    object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
     object.style.left = `${left}px`;
     object.style.animation = "slide 4s infinite";
   }
 
-  // collisionDetection() {
-  //   const ss = document.getElementById("ss");
-  //   console.log(ss.);
-  //   const asteroid = document.getElementById("asteroid");
-  //   const currLeftSS = ss.style.left;
-  //   const currLeftAsteroid = asteroid.style.left;
-  //   console.log(currLeftSS);
-  //   console.log(currLeftAsteroid);
+  collisionDetection() {
+    const ss = document.getElementById("ss");
+    const asteroid = document.getElementById("asteroid");
 
-  //   // let ssLeft = parseInt(window.getComputedStyle(ss).getPropertyValue("left"));
-  //   // let asteroidLeft = parseInt(
-  //   //   window.getComputedStyle(asteroid).getPropertyValue("left")
-  //   // );
-  //   // let asteroidTop = parseInt(
-  //   //   window.getComputedStyle(asteroid).getPropertyValue("top")
-  //   // );
-  //   // if (ssLeft === asteroidLeft) {
-  //   //   alert("Game Over");
-  //   //   this.asteroid.style.animation = "none";
-  //   // }
-  // }
+    let ssRect = ss.getBoundingClientRect();
+    let asteroidRect = asteroid.getBoundingClientRect();
+    // console.log(ssRect);
+    // console.log(asteroidRect);
+
+    setInterval(() => {
+      let collisionFlag = !(
+        ssRect.bottom < asteroidRect.top ||
+        ssRect.top > asteroidRect.bottom ||
+        ssRect.right < asteroidRect.left ||
+        ssRect.left > asteroidRect.right
+      );
+      // console.log(collisionFlag);
+
+      if (collisionFlag) {
+        alert("Game Over");
+        ss.style.animation = "none";
+      }
+    }, 1);
+  }
 }
