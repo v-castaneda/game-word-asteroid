@@ -15,19 +15,25 @@ const images = [
 let runFlag = true;
 
 while (runFlag) {
-  // keep run flag on when no collision
+  // size lane chosen to be consistent with character
+  // div size; and a clean divisor of game div box
   const sizeLane = 100;
+
+  // randomly choosing one of the 10 lanes to drop div from
+  // the 10 comes from game div = 1000, and sizeLane = 100,
+  // resulting in 10 lanes to choose from
   const randLane = Math.floor(Math.random() * 10);
 
+  // selecting a random integer to change the asteroid image
+  // with each iteration
   const randImg = Math.floor(Math.random() * images.length);
   const asteroid = new Asteroid(images[randImg]);
-  console.log(`sizeLane: ${sizeLane}`);
-  console.log(`randLane: ${randLane}`);
-  console.log(`sizeLane * randLane: ${sizeLane * randLane}`);
+
+  // passing the random lane chosen for the setFallLane method
   asteroid.setFallLane(sizeLane * randLane);
 
   // set run flag to false when collision
-  //   asteroid.collisionDetection();
+  asteroid.collisionDetection();
 
   runFlag = false;
 }
