@@ -18,20 +18,11 @@ const images = [
 let runFlag = true;
 
 while (runFlag) {
-  // size lane chosen to be consistent with character
-  // div size; and a clean divisor of game div box
-  const sizeLane = 100;
-
-  // randomly choosing one of the 10 lanes to drop div from
-  // the 10 comes from game div = 1000px, and sizeLane = 100px,
-  // resulting in 10 lanes to choose from
-  const randLane1 = (Math.random() * 10) % 2;
-
-  // selecting a random integer to change the asteroid image
-  // with each iteration
-  // const randImg = Math.floor(Math.random() * images.length);
-  // const asteroid1 = new Asteroid(images[randImg]);
-
+  // randomizing order of images to change appearance of each div
+  // in each iteration
+  images.sort((a, b) => {
+    return 0.5 - Math.random();
+  });
   const asteroid1 = new Asteroid(images[0]);
   const asteroid2 = new Asteroid(images[1]);
   const asteroid3 = new Asteroid(images[2]);
@@ -40,24 +31,23 @@ while (runFlag) {
   const asteroid6 = new Asteroid(images[5]);
   const asteroid7 = new Asteroid(images[6]);
   const asteroid8 = new Asteroid(images[7]);
-  const asteroid9 = new Asteroid(images[7]);
-  const asteroid10 = new Asteroid(images[7]);
+  const asteroid9 = new Asteroid(images[8]);
+  const asteroid10 = new Asteroid(images[9]);
 
   // passing the random lane chosen for the setFallLane method
   // asteroid1.setFallLane(sizeLane * randLane1);
-  asteroid1.setFallLane(sizeLane * 0);
-  asteroid2.setFallLane(sizeLane * 0);
-  asteroid3.setFallLane(sizeLane * 0);
-  asteroid4.setFallLane(sizeLane * 0);
-  asteroid5.setFallLane(sizeLane * 0);
-  asteroid6.setFallLane(sizeLane * 0);
-  asteroid7.setFallLane(sizeLane * 0);
-  asteroid8.setFallLane(sizeLane * 0);
-  asteroid9.setFallLane(sizeLane * 0);
-  asteroid10.setFallLane(sizeLane * 0);
+  asteroid1.drop();
+  asteroid2.drop();
+  asteroid3.drop();
+  asteroid4.drop();
+  asteroid5.drop();
+  asteroid6.drop();
+  asteroid7.drop();
+  asteroid8.drop();
+  asteroid9.drop();
+  asteroid10.drop();
 
   // set run flag to false when collision
   // asteroid.collisionDetection();
-
   runFlag = false;
 }

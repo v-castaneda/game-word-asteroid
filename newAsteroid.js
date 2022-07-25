@@ -16,11 +16,12 @@ class Asteroid {
     document.getElementById("game").appendChild(div);
   }
 
-  setFallLane(left) {
-    // set style of falling asteroid
+  drop() {
     const object = document.getElementById(this.id);
     const divSize = 100;
     object.style.display = "inline-block";
+    object.style.whiteSpace = "nowrap";
+    object.style.overflow = "hidden";
     object.style.width = `${divSize}px`;
     object.style.height = `${divSize}px`;
     object.style.backgroundSize = `${divSize}px`;
@@ -29,8 +30,8 @@ class Asteroid {
     object.style.padding = 0;
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
-    object.style.left = `${left}px`;
-    // object.style.animation = "slide 4s infinite";
+    object.style.left = `0px`;
+    object.style.animation = "slide 4s";
   }
 
   collisionDetection() {
