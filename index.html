@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./style.css" />
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asteroid Dodge Game</title>
-  </head>
-  <body>
-    <div id="game">
-      <div id="timer">00s</div>
-      <div id="white"></div>
-    </div>
-    <!-- First, load functions to create and move characters -->
-    <script src="./moveSpaceship.js"></script>
-    <!-- <script src="./moveAsteroid.js"></script> -->
 
-    <script src="./newAsteroid.js"></script>
-    <script src="./newSpaceship.js"></script>
-    <!-- Next, run scripts calling prev functions to 
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Personal Stylesheet -->
+    <link href="./style.css" rel="stylesheet" />
+
+    <title>Asteroid Rain</title>
+  </head>
+
+  <!-- Start of Nav bar-->
+  <div class="sitenav">
+    <div class="sitenav__container">
+      <div class="sitenav__content">
+        <a class="sitenav__logo" href="/">AddThis</a>
+        <nav class="sitenav__menu">
+          <a
+            class="sitenav__menu-link"
+            href="https://www.addthis.com/get/"
+            title="Tools"
+            >Tools</a
+          >
+          <a
+            class="sitenav__menu-link"
+            href="https://www.addthis.com/academy/"
+            title="Academy"
+            >Academy</a
+          >
+          <a
+            class="sitenav__menu-link"
+            href="https://www.addthis.com/blog/#.YqAlHxPMJhE"
+            title="Blog"
+            >Blog</a
+          >
+          <a
+            class="sitenav__menu-link"
+            href="https://www.addthis.com/academy/help/"
+            title="Help"
+            >Help</a
+          >
+        </nav>
+        <a
+          class="sitenav__button"
+          href="https://www.addthis.com/login?next=/dashboard"
+          title="Dashboard"
+          >Dashboard</a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- End of Nav bar-->
+
+  <div id="wrapper">
+    <!-- Start of Header-->
+    <header class="hero home">
+      <div class="hero__container">
+        <!--Start of right side of header-->
+        <div class="hero__content">
+          <div class="hero__content-video-graphic">
+            <div id="video" class="video-graphic">
+              <img
+                src="https://www.addthis.com//dietsite-assets/images/homepage/watch-video.svg"
+                alt="watch video graphic"
+                class="video-graphic__link"
+              />
+            </div>
+          </div>
+        </div>
+        <!--End of right side of header-->
+      </div>
+    </header>
+    <!-- End of Header-->
+  </div>
+
+  <div id="game">
+    <div id="timer">00s</div>
+    <div id="white"></div>
+  </div>
+  <!-- First, load functions to create and move characters -->
+  <script src="./moveSpaceship.js"></script>
+  <!-- <script src="./moveAsteroid.js"></script> -->
+
+  <script src="./newAsteroid.js"></script>
+  <script src="./newSpaceship.js"></script>
+  <!-- Next, run scripts calling prev functions to 
     instantiate game object-->
-    <script src="./index.js"></script>
-  </body>
+  <script src="./index.js"></script>
 </html>

@@ -16,7 +16,7 @@ class Asteroid {
     document.getElementById("game").appendChild(div);
   }
 
-  // method for making asteroids fall
+  // time
   async drop(time) {
     await this.sleep(time);
     const object = document.getElementById(this.id);
@@ -33,7 +33,7 @@ class Asteroid {
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
     object.style.left = `0px`;
-    object.style.animation = "slide 3s infinite";
+    object.style.animation = "slide 4s infinite";
   }
 
   sleep(time) {
