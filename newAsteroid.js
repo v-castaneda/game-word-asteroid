@@ -2,18 +2,25 @@ class Asteroid {
   constructor(filePath) {
     // create div element for asteroid and assing ID
     const div = document.createElement("div");
-    div.setAttribute("id", "asteroid");
+
+    // extract numerical part of image file to generate unique ID
+    const num = filePath.replace(/[^0-9]/g, "");
+    const id = `asteroid-${num}`;
+    div.setAttribute("id", id);
+    this.id = id;
 
     // set background image of div to asteroid
     div.style.backgroundImage = `url(${filePath})`;
 
+    // append div to DOM
     document.getElementById("game").appendChild(div);
   }
 
   setFallLane(left) {
-    // set css of falling asteroid
-    const object = document.getElementById("asteroid");
+    // set style of falling asteroid
+    const object = document.getElementById(this.id);
     const divSize = 100;
+    object.style.display = "inline-block";
     object.style.width = `${divSize}px`;
     object.style.height = `${divSize}px`;
     object.style.backgroundSize = `${divSize}px`;
@@ -23,7 +30,7 @@ class Asteroid {
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
     object.style.left = `${left}px`;
-    object.style.animation = "slide 4s infinite";
+    // object.style.animation = "slide 4s infinite";
   }
 
   collisionDetection() {
