@@ -17,7 +17,8 @@ class Asteroid {
   }
 
   // method for making asteroids fall
-  drop() {
+  async drop(time) {
+    await this.sleep(time);
     const object = document.getElementById(this.id);
     const divSize = 100;
     object.style.display = "inline-block";
@@ -32,7 +33,13 @@ class Asteroid {
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
     object.style.left = `0px`;
-    object.style.animation = "slide 4s infinite";
+    object.style.animation = "slide 3s infinite";
+  }
+
+  sleep(time) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, time);
+    });
   }
 
   collisionDetection() {
