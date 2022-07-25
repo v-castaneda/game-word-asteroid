@@ -48,7 +48,7 @@ async function makeItRain() {
 makeItRain();
 
 let clockDiv = document.getElementById("clock");
-let startTime = 5;
+let startTime = 70;
 
 const countDown = setInterval(() => {
   startTime--;
