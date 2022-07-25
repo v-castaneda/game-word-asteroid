@@ -16,6 +16,7 @@ class Asteroid {
     document.getElementById("game").appendChild(div);
   }
 
+  // method for making asteroids fall
   drop() {
     const object = document.getElementById(this.id);
     const divSize = 100;
@@ -31,7 +32,7 @@ class Asteroid {
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
     object.style.left = `0px`;
-    object.style.animation = "slide 4s";
+    object.style.animation = "slide 4s infinite";
   }
 
   collisionDetection() {

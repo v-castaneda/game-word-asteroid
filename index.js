@@ -23,6 +23,8 @@ while (runFlag) {
   images.sort((a, b) => {
     return 0.5 - Math.random();
   });
+
+  // creating asteroids
   const asteroid1 = new Asteroid(images[0]);
   const asteroid2 = new Asteroid(images[1]);
   const asteroid3 = new Asteroid(images[2]);
@@ -34,8 +36,7 @@ while (runFlag) {
   const asteroid9 = new Asteroid(images[8]);
   const asteroid10 = new Asteroid(images[9]);
 
-  // passing the random lane chosen for the setFallLane method
-  // asteroid1.setFallLane(sizeLane * randLane1);
+  // calling drop method to make asteroids fall
   asteroid1.drop();
   asteroid2.drop();
   asteroid3.drop();
