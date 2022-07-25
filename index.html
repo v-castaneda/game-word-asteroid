@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-----------------------------------head-------------------------------------->
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -21,82 +22,21 @@
 
     <title>Asteroid Rain</title>
   </head>
-
-  <!-- Start of Nav bar-->
+  <!------------------------------------nav bar---------------------------------->
   <div class="sitenav">
-    <div class="sitenav__container">
-      <div class="sitenav__content">
-        <a class="sitenav__logo" href="/">AddThis</a>
-        <nav class="sitenav__menu">
-          <a
-            class="sitenav__menu-link"
-            href="https://www.addthis.com/get/"
-            title="Tools"
-            >Tools</a
-          >
-          <a
-            class="sitenav__menu-link"
-            href="https://www.addthis.com/academy/"
-            title="Academy"
-            >Academy</a
-          >
-          <a
-            class="sitenav__menu-link"
-            href="https://www.addthis.com/blog/#.YqAlHxPMJhE"
-            title="Blog"
-            >Blog</a
-          >
-          <a
-            class="sitenav__menu-link"
-            href="https://www.addthis.com/academy/help/"
-            title="Help"
-            >Help</a
-          >
-        </nav>
-        <a
-          class="sitenav__button"
-          href="https://www.addthis.com/login?next=/dashboard"
-          title="Dashboard"
-          >Dashboard</a
-        >
-      </div>
+    <div class="sitenav_content">
+      <div class="sitenav_logo"></div>
+      <div calss="sitenav_title">Asteroid Rain</div>
+      <div class="sitenav_timer">Timer: 00s</div>
     </div>
   </div>
-  <!-- End of Nav bar-->
-
-  <div id="wrapper">
-    <!-- Start of Header-->
-    <header class="hero home">
-      <div class="hero__container">
-        <!--Start of right side of header-->
-        <div class="hero__content">
-          <div class="hero__content-video-graphic">
-            <div id="video" class="video-graphic">
-              <img
-                src="https://www.addthis.com//dietsite-assets/images/homepage/watch-video.svg"
-                alt="watch video graphic"
-                class="video-graphic__link"
-              />
-            </div>
-          </div>
-        </div>
-        <!--End of right side of header-->
-      </div>
-    </header>
-    <!-- End of Header-->
-  </div>
-
-  <div id="game">
-    <div id="timer">00s</div>
-    <div id="white"></div>
-  </div>
-  <!-- First, load functions to create and move characters -->
+  <!-----------------------------------game box---------------------------------->
+  <div id="game"></div>
+  <!-------------------------------game javascript------------------------------->
+  <!-- Game JavaSript Files - sequence matters -->
   <script src="./moveSpaceship.js"></script>
-  <!-- <script src="./moveAsteroid.js"></script> -->
-
   <script src="./newAsteroid.js"></script>
   <script src="./newSpaceship.js"></script>
-  <!-- Next, run scripts calling prev functions to 
-    instantiate game object-->
   <script src="./index.js"></script>
+  <!----------------------------------------------------------------------------->
 </html>
