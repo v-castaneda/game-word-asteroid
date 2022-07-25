@@ -24,20 +24,17 @@
   </head>
   <!------------------------------------nav bar---------------------------------->
   <div class="sitenav">
-    <div class="sitenav_content">
-      <div class="sitenav_logo"></div>
-      <div class="sitenav_title">Asteroid Rain</div>
-      <div class="sitenav_timer">
-        Timer: 00s <br />
-        Lives: 3 <br />
-        Level: 1
-      </div>
+    <div class="content">
+      <div class="logo"></div>
+      <div class="title">Asteroid Rain</div>
+      <div class="timer" id="clock"></div>
     </div>
   </div>
   <!-----------------------------------game box---------------------------------->
   <div id="game"></div>
   <!-------------------------------game javascript------------------------------->
   <!-- Game JavaSript Files - sequence matters -->
+  <script src="./clock.js"></script>
   <script src="./moveSpaceship.js"></script>
   <script src="./newAsteroid.js"></script>
   <script src="./newSpaceship.js"></script>

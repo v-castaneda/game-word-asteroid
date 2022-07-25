@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.sitenav_content {
+.content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,19 +20,19 @@
   align-content: center;
 }
 
-.sitenav_logo {
+.logo {
   width: 100px;
   height: 100px;
   background-image: url("./assets/meteor_logo.jpeg");
   background-size: 100px 100px;
 }
 
-.sitenav_title {
+.title {
   font-size: 50px;
   font-weight: 900;
 }
 
-.sitenav_timer {
+.timer {
   border: 2px solid var(--textLinkColor);
   border-radius: 32px;
   padding: 0.35em 1.5em;
