@@ -35,15 +35,15 @@ const asteroid10 = new Asteroid(images[9]);
 // calling drop method to make asteroids fall
 async function makeItRain() {
   await asteroid1.drop(1000);
-  // await asteroid2.drop(2000);
-  // await asteroid3.drop(3000);
-  // await asteroid4.drop(7000);
-  // await asteroid5.drop(5000);
-  // await asteroid6.drop(1000);
-  // await asteroid7.drop(3000);
-  // await asteroid8.drop(6000);
-  // await asteroid9.drop(8000);
-  // await asteroid10.drop(1000);
+  await asteroid2.drop(2000);
+  await asteroid3.drop(3000);
+  await asteroid4.drop(7000);
+  await asteroid5.drop(5000);
+  await asteroid6.drop(1000);
+  await asteroid7.drop(3000);
+  await asteroid8.drop(6000);
+  await asteroid9.drop(8000);
+  await asteroid10.drop(1000);
 }
 makeItRain();
 
