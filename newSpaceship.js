@@ -7,7 +7,7 @@ function newSpaceship(filePath) {
   object.style.backgroundImage = `url(${filePath})`;
 
   //set spaceship dimensions
-  const imgSize = 75;
+  const imgSize = 50;
   object.style.width = `${imgSize}px`;
   object.style.height = `${imgSize}px`;
   object.style.backgroundSize = `${imgSize}px`;

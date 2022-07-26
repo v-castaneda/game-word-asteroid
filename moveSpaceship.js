@@ -10,7 +10,7 @@ document.addEventListener("keydown", (event) => {
 function moveLeft() {
   let left = parseInt(window.getComputedStyle(ss).getPropertyValue("left"));
 
-  left -= 100;
+  left -= 80;
   // keep spaceship within left side of screen
   if (left >= 0) {
     ss.style.left = left + "px";
@@ -20,7 +20,7 @@ function moveLeft() {
 function moveRight() {
   let left = parseInt(window.getComputedStyle(ss).getPropertyValue("left"));
 
-  left += 100;
+  left += 80;
   // keep spaceship within right side of screen
   if (left < 1000) {
     ss.style.left = left + "px";
