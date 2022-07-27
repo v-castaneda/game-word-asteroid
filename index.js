@@ -71,13 +71,13 @@ let timeB4drop = 1000;
 async function dropAsteroids() {
   await asteroid1.drop(timeB4drop);
   await asteroid2.drop(timeB4drop);
-  // await asteroid3.drop(timeB4drop);
-  // await asteroid4.drop(timeB4drop);
-  // await asteroid5.drop(timeB4drop);
-  // await asteroid6.drop(timeB4drop);
-  // await asteroid7.drop(timeB4drop);
-  // await asteroid8.drop(timeB4drop);
-  // await asteroid9.drop(timeB4drop);
-  // await asteroid10.drop(timeB4drop);
+  await asteroid3.drop(timeB4drop);
+  await asteroid4.drop(timeB4drop);
+  await asteroid5.drop(timeB4drop);
+  await asteroid6.drop(timeB4drop);
+  await asteroid7.drop(timeB4drop);
+  await asteroid8.drop(timeB4drop);
+  await asteroid9.drop(timeB4drop);
+  await asteroid10.drop(timeB4drop);
 }
 dropAsteroids();
