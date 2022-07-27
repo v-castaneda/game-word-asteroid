@@ -18,10 +18,6 @@ class Asteroid {
 
   // method to make asteroids fall
   async drop(time) {
-    // obtaining header title
-    const display = document.getElementById("clock");
-    console.log(display);
-
     // create asteroid
     await this.sleep(time);
     const object = document.getElementById(this.id);
@@ -57,14 +53,18 @@ class Asteroid {
     let asteroidBottom = 100;
     let asteroidLeft = asteroidRect.left;
     let asteroidRight = asteroidRect.right;
+    let dropRate = 1;
 
     setInterval(() => {
+      // starting lives
+      const livesRemaining = livesTotal;
+
       // obtaining current position of spaceship
       let ssRect = document.getElementById("ss").getBoundingClientRect();
 
       // updating asteroid's vertical position informationg
-      asteroidTop += 1;
-      asteroidBottom += 1;
+      asteroidTop += dropRate;
+      asteroidBottom += dropRate;
       object.style.top = `${asteroidTop}px`;
 
       // storing collision detection flag
@@ -79,32 +79,36 @@ class Asteroid {
 
       if (collisionFlag) {
         // creating table arrays for debugging collisions
-        const arrayDebug = [
-          [this.id],
-          ["asteroidTop", "asteroidBottom", "ssRect.top", "ssRect.bottom"],
-          [asteroidTop, asteroidBottom, ssRect.top, ssRect.bottom],
-        ];
-        console.table(arrayDebug);
-        const arrayDebug2 = [
-          [this.id],
-          ["asteroidLeft", "asteroidRight", "ssRect.left", "ssRect.right"],
-          [asteroidLeft, asteroidRight, ssRect.left, ssRect.right],
-        ];
-        console.table(arrayDebug2);
+        // const arrayDebug = [
+        //   [this.id],
+        //   ["asteroidTop", "asteroidBottom", "ssRect.top", "ssRect.bottom"],
+        //   [asteroidTop, asteroidBottom, ssRect.top, ssRect.bottom],
+        // ];
+        // console.table(arrayDebug);
+        // const arrayDebug2 = [
+        //   [this.id],
+        //   ["asteroidLeft", "asteroidRight", "ssRect.left", "ssRect.right"],
+        //   [asteroidLeft, asteroidRight, ssRect.left, ssRect.right],
+        // ];
+        // console.table(arrayDebug2);
 
-        // alert("Crash!");
-        // display.innerHTML = "BOOM!!!";
-        // display.innerHTML = "Meteor Dodge!";
-        // object.style.top = "0px";
+        object.style.top = "0px";
+        asteroidTop = 0;
+        asteroidBottom = 100;
         // window.location.reload();
       }
-
       // resetting top and bottom positions to avoid infinitely dropping asteroids
-      if (asteroidTop >= 1000) {
+      else if (asteroidTop >= 1000) {
         asteroidTop = 0;
         asteroidBottom = 100;
       }
-    }, 1);
+    }, 10);
+  }
+
+  deductLives() {
+    livesRemaining--;
+    console.log(livesRemaining);
+    // dashLives.innerHTML = `Lives - ${livesRemaining}`;
   }
 
   sleep(time) {

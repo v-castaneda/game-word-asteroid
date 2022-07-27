@@ -2,12 +2,13 @@
 //------------------ game parameters ------------------//
 //-----------------------------------------------------//
 
-let startTime = 5; /* secs per level */
+let startTime = 10; /* secs per level */
+let livesTotal = 3; /* number of crashes allowed */
 let startLevel = 0; /* starting level */
 let endLevel = 10; /* ending level */
 
 //-----------------------------------------------------//
-//--------------------- timer -------------------------//
+//-------------------- dashboard ----------------------//
 //-----------------------------------------------------//
 
 // starting timer
@@ -15,6 +16,10 @@ startCountDown(startTime);
 setInterval(() => {
   startCountDown(startTime);
 }, startTime * 1000);
+
+// setting starting lives
+const dashLives = document.getElementById("lives");
+dashLives.innerHTML = `Lives - ${livesTotal}`;
 
 //-----------------------------------------------------//
 //-------------------- spaceship ----------------------//
