@@ -56,9 +56,6 @@ class Asteroid {
     let dropRate = 1;
 
     setInterval(() => {
-      // starting lives
-      const livesRemaining = livesTotal;
-
       // obtaining current position of spaceship
       let ssRect = document.getElementById("ss").getBoundingClientRect();
 
@@ -77,27 +74,16 @@ class Asteroid {
         asteroidBottom > ssRect.top - 100 &&
         asteroidTop < ssRect.bottom - 100;
 
-      if (collisionFlag) {
-        // creating table arrays for debugging collisions
-        // const arrayDebug = [
-        //   [this.id],
-        //   ["asteroidTop", "asteroidBottom", "ssRect.top", "ssRect.bottom"],
-        //   [asteroidTop, asteroidBottom, ssRect.top, ssRect.bottom],
-        // ];
-        // console.table(arrayDebug);
-        // const arrayDebug2 = [
-        //   [this.id],
-        //   ["asteroidLeft", "asteroidRight", "ssRect.left", "ssRect.right"],
-        //   [asteroidLeft, asteroidRight, ssRect.left, ssRect.right],
-        // ];
-        // console.table(arrayDebug2);
-
+      if (collisionFlag && livesTotal - impactTally.length > 0) {
+        // reset asteroid at the top once collision is detected
         object.style.top = "0px";
         asteroidTop = 0;
         asteroidBottom = 100;
-      }
-      // resetting asteroids at the top once it clears the spaceship
-      else if (asteroidTop >= 1000) {
+        this.deductLives();
+      } else if (collisionFlag && livesTotal - impactTally.length === 0) {
+        alert("Game Over");
+      } else if (asteroidTop >= 1000) {
+        // also reset asteroid at the top once it clears the spaceship
         asteroidTop = 0;
         asteroidBottom = 100;
       }
@@ -105,9 +91,9 @@ class Asteroid {
   }
 
   deductLives() {
-    livesRemaining--;
-    console.log(livesRemaining);
-    // dashLives.innerHTML = `Lives - ${livesRemaining}`;
+    // deduct number of impacts from starting lives
+    impactTally.push("i");
+    dashLives.innerHTML = `Lives - ${livesTotal - impactTally.length}`;
   }
 
   sleep(time) {

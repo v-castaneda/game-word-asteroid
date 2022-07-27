@@ -17,6 +17,9 @@ setInterval(() => {
   startCountDown(startTime);
 }, startTime * 1000);
 
+// impact tally
+let impactTally = [];
+
 // setting starting lives
 const dashLives = document.getElementById("lives");
 dashLives.innerHTML = `Lives - ${livesTotal}`;
@@ -67,7 +70,7 @@ const asteroid10 = new Asteroid(images[9]);
 let timeB4drop = 1000;
 async function dropAsteroids() {
   await asteroid1.drop(timeB4drop);
-  // await asteroid2.drop(timeB4drop);
+  await asteroid2.drop(timeB4drop);
   // await asteroid3.drop(timeB4drop);
   // await asteroid4.drop(timeB4drop);
   // await asteroid5.drop(timeB4drop);
