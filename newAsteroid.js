@@ -16,7 +16,7 @@ class Asteroid {
     document.getElementById("game").appendChild(div);
   }
 
-  // make asteroids fall
+  // method to make asteroids fall
   async drop(time) {
     // create asteroid
     await this.sleep(time);
@@ -40,7 +40,7 @@ class Asteroid {
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
 
-    // to detect collision
+    // start of collision detection
     const asteroidRect = object.getBoundingClientRect();
 
     // first, initialize top and bottom values of asteroid

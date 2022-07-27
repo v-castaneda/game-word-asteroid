@@ -1,6 +1,7 @@
+// create spaceship
 newSpaceship("./assets/ship5.png");
 
-// create list images for falling asteroids
+// store list of images to use as falling asteroids
 const images = [
   "./assets/asteroid-0.png",
   "./assets/asteroid-1.png",
@@ -15,7 +16,7 @@ const images = [
 ];
 
 // randomizing order of images to change appearance of each div
-// in each iteration
+// with each subsequent iteration
 images.sort((a, b) => {
   return 0.5 - Math.random();
 });
@@ -32,19 +33,19 @@ const asteroid8 = new Asteroid(images[7]);
 const asteroid9 = new Asteroid(images[8]);
 const asteroid10 = new Asteroid(images[9]);
 
-// calling drop method to make asteroids fall
-let secBeforeDrop = 1000;
+// calling drop method to start dropping asteroids
+let timeB4drop = 1000;
 async function dropAsteroids() {
-  await asteroid1.drop(secBeforeDrop);
-  await asteroid2.drop(secBeforeDrop);
-  await asteroid3.drop(secBeforeDrop);
-  await asteroid4.drop(secBeforeDrop);
-  await asteroid5.drop(secBeforeDrop);
-  await asteroid6.drop(secBeforeDrop);
-  await asteroid7.drop(secBeforeDrop);
-  await asteroid8.drop(secBeforeDrop);
-  await asteroid9.drop(secBeforeDrop);
-  await asteroid10.drop(secBeforeDrop);
+  await asteroid1.drop(timeB4drop);
+  await asteroid2.drop(timeB4drop);
+  await asteroid3.drop(timeB4drop);
+  await asteroid4.drop(timeB4drop);
+  await asteroid5.drop(timeB4drop);
+  await asteroid6.drop(timeB4drop);
+  await asteroid7.drop(timeB4drop);
+  await asteroid8.drop(timeB4drop);
+  await asteroid9.drop(timeB4drop);
+  await asteroid10.drop(timeB4drop);
 }
 dropAsteroids();
 
