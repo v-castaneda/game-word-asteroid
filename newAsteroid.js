@@ -95,9 +95,8 @@ class Asteroid {
         object.style.top = "0px";
         asteroidTop = 0;
         asteroidBottom = 100;
-        // window.location.reload();
       }
-      // resetting top and bottom positions to avoid infinitely dropping asteroids
+      // resetting asteroids at the top once it clears the spaceship
       else if (asteroidTop >= 1000) {
         asteroidTop = 0;
         asteroidBottom = 100;
