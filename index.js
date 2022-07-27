@@ -2,6 +2,7 @@ newSpaceship("./assets/ship5.png");
 
 // create list images for falling asteroids
 const images = [
+  "./assets/asteroid-0.png",
   "./assets/asteroid-1.png",
   "./assets/asteroid-2.png",
   "./assets/asteroid-3.png",
@@ -11,7 +12,6 @@ const images = [
   "./assets/asteroid-7.png",
   "./assets/asteroid-8.png",
   "./assets/asteroid-9.png",
-  "./assets/asteroid-10.png",
 ];
 
 // randomizing order of images to change appearance of each div
@@ -22,28 +22,29 @@ images.sort((a, b) => {
 
 // creating asteroids
 const asteroid1 = new Asteroid(images[0]);
-// const asteroid2 = new Asteroid(images[1]);
-// const asteroid3 = new Asteroid(images[2]);
-// const asteroid4 = new Asteroid(images[3]);
-// const asteroid5 = new Asteroid(images[4]);
-// const asteroid6 = new Asteroid(images[5]);
-// const asteroid7 = new Asteroid(images[6]);
-// const asteroid8 = new Asteroid(images[7]);
-// const asteroid9 = new Asteroid(images[8]);
-// const asteroid10 = new Asteroid(images[9]);
+const asteroid2 = new Asteroid(images[1]);
+const asteroid3 = new Asteroid(images[2]);
+const asteroid4 = new Asteroid(images[3]);
+const asteroid5 = new Asteroid(images[4]);
+const asteroid6 = new Asteroid(images[5]);
+const asteroid7 = new Asteroid(images[6]);
+const asteroid8 = new Asteroid(images[7]);
+const asteroid9 = new Asteroid(images[8]);
+const asteroid10 = new Asteroid(images[9]);
 
 // calling drop method to make asteroids fall
+let secBeforeDrop = 1000;
 async function dropAsteroids() {
-  await asteroid1.drop(0);
-  // await asteroid2.drop(2000);
-  // await asteroid3.drop(3000);
-  // await asteroid4.drop(7000);
-  // await asteroid5.drop(5000);
-  // await asteroid6.drop(1000);
-  // await asteroid7.drop(3000);
-  // await asteroid8.drop(6000);
-  // await asteroid9.drop(8000);
-  // await asteroid10.drop(1000);
+  await asteroid1.drop(secBeforeDrop);
+  await asteroid2.drop(secBeforeDrop);
+  await asteroid3.drop(secBeforeDrop);
+  await asteroid4.drop(secBeforeDrop);
+  await asteroid5.drop(secBeforeDrop);
+  await asteroid6.drop(secBeforeDrop);
+  await asteroid7.drop(secBeforeDrop);
+  await asteroid8.drop(secBeforeDrop);
+  await asteroid9.drop(secBeforeDrop);
+  await asteroid10.drop(secBeforeDrop);
 }
 dropAsteroids();
 

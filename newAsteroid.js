@@ -21,29 +21,35 @@ class Asteroid {
     // create asteroid
     await this.sleep(time);
     const object = document.getElementById(this.id);
-    const divSize = 100;
+
+    const objectNum = this.id.replace(/^\D+/g, "");
+    const objLeft = objectNum * 100;
+    object.style.left = `${objLeft}px`;
+
     object.style.display = "inline-block";
     object.style.whiteSpace = "nowrap";
     object.style.overflow = "hidden";
+
+    const divSize = 100;
     object.style.width = `${divSize}px`;
     object.style.height = `${divSize}px`;
     object.style.backgroundSize = `${divSize}px`;
-    object.style.position = `relative`;
+    object.style.position = `absolute`;
     object.style.top = "0px";
     object.style.padding = 0;
     object.style.borderWidth = 0;
     object.style.backgroundRepeat = "no-repeat";
-    object.style.left = `0px`;
 
     // to detect collision
     const asteroidRect = object.getBoundingClientRect();
 
     // first, initialize top and bottom values of asteroid
     let asteroidTop = 0;
-    let asteroidBottom = 0;
+    let asteroidBottom = 100;
     let asteroidLeft = asteroidRect.left;
     let asteroidRight = asteroidRect.right;
-    let myInterval = setInterval(() => {
+
+    setInterval(() => {
       // the update asteroid's vertical position
       asteroidTop += 1;
       asteroidBottom += 1;
@@ -54,48 +60,32 @@ class Asteroid {
       object.style.top = `${asteroidTop}px`;
 
       let collisionFlag =
-        asteroidRight >= ssRect.left &&
-        asteroidLeft <= ssRect.right &&
-        asteroidBottom >= ssRect.top &&
-        asteroidTop <= ssRect.bottom;
-
-      console.log(collisionFlag);
-
-      if (asteroidTop > 750) {
-        asteroidTop = 0;
-        asteroidBottom = 100;
-      }
-
-      // creating object array for debugging
-      const arrayDebug = [
-        [
-          "comparison",
-          "asteroidRight >= ssRect.left",
-          "asteroidLeft <= ssRect.right",
-          "asteroidBottom >= ssRect.top",
-          "asteroidTop <= ssRect.bottom",
-        ],
-        ["asteroid", asteroidRight, asteroidLeft, asteroidBottom, asteroidTop],
-        ["spaceship", ssRect.left, ssRect.right, ssRect.top, ssRect.bottom],
-        [
-          "comparison",
-          asteroidRight >= ssRect.left,
-          asteroidLeft <= ssRect.right,
-          asteroidBottom >= ssRect.top,
-          asteroidTop <= ssRect.bottom,
-        ],
-      ];
-      console.table(arrayDebug);
+        asteroidRight > ssRect.left &&
+        asteroidLeft < ssRect.right &&
+        asteroidBottom > ssRect.top - 100 &&
+        asteroidTop < ssRect.bottom - 100;
 
       if (collisionFlag) {
-        const arrayDebug2 = [
+        const arrayDebug = [
+          [this.id],
           ["asteroidTop", "asteroidBottom", "ssRect.top", "ssRect.bottom"],
           [asteroidTop, asteroidBottom, ssRect.top, ssRect.bottom],
         ];
-        console.table(arrayDebug2);
+        console.table(arrayDebug);
+        const arrayDebug3 = [
+          [this.id],
+          ["asteroidLeft", "asteroidRight", "ssRect.left", "ssRect.right"],
+          [asteroidLeft, asteroidRight, ssRect.left, ssRect.right],
+        ];
+        console.table(arrayDebug3);
         alert("Game Over");
         // object.style.top = "0px";
         // window.location.reload();
+      }
+
+      if (asteroidTop >= 1000) {
+        asteroidTop = 0;
+        asteroidBottom = 100;
       }
     }, 1);
   }

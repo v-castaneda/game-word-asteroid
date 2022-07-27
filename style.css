@@ -57,16 +57,8 @@
   height: 1500px;
   margin: auto;
   background-image: url(/assets/Parallax100.png);
+  position: relative;
 }
-
-/* @keyframes slide {
-  from {
-    top: -100px;
-  }
-  to {
-    top: 1250px;
-  }
-} */
 
 /********************/
 /* End of Game  */
