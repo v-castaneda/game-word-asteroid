@@ -32,10 +32,14 @@
   font-weight: 900;
 }
 
-.timer {
+.dashboard {
   border: 2px solid var(--textLinkColor);
-  border-radius: 32px;
-  padding: 0.35em 1.5em;
+  border-radius: 10px;
+  width: auto;
+}
+
+.timer .lives {
+  padding: 10px;
   margin-left: 20px;
   text-decoration: none;
   font-size: 16px;

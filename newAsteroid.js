@@ -18,6 +18,10 @@ class Asteroid {
 
   // method to make asteroids fall
   async drop(time) {
+    // obtaining header title
+    const display = document.getElementById("clock");
+    console.log(display);
+
     // create asteroid
     await this.sleep(time);
     const object = document.getElementById(this.id);
@@ -88,7 +92,9 @@ class Asteroid {
         ];
         console.table(arrayDebug2);
 
-        alert("Game Over");
+        // alert("Crash!");
+        // display.innerHTML = "BOOM!!!";
+        // display.innerHTML = "Meteor Dodge!";
         // object.style.top = "0px";
         // window.location.reload();
       }

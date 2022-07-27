@@ -2,7 +2,19 @@
 //------------------ game parameters ------------------//
 //-----------------------------------------------------//
 
-let startTime = 62; /* secs per level */
+let startTime = 5; /* secs per level */
+let startLevel = 0; /* starting level */
+let endLevel = 10; /* ending level */
+
+//-----------------------------------------------------//
+//--------------------- timer -------------------------//
+//-----------------------------------------------------//
+
+// starting timer
+startCountDown(startTime);
+setInterval(() => {
+  startCountDown(startTime);
+}, startTime * 1000);
 
 //-----------------------------------------------------//
 //-------------------- spaceship ----------------------//
@@ -45,9 +57,6 @@ const asteroid7 = new Asteroid(images[6]);
 const asteroid8 = new Asteroid(images[7]);
 const asteroid9 = new Asteroid(images[8]);
 const asteroid10 = new Asteroid(images[9]);
-
-// starting timer
-startTimer();
 
 // dropping asteroids
 let timeB4drop = 1000;

@@ -1,25 +1,28 @@
 // Timer for countdown
-function startTimer() {
+function startCountDown(time) {
   let clockDiv = document.getElementById("clock");
 
+  // interval is set to every second
   const countDown = setInterval(() => {
-    startTime--;
-    displayTime(startTime);
-    if ((startTime <= 0) | (startTime < 1)) {
+    time--;
+    displayTime(time);
+    if ((time <= 0) | (time < 1)) {
       endTime();
       clearInterval(countDown);
     }
   }, 1000);
 
+  // modifying min and secs to display two digits
   function displayTime(second) {
     const min = Math.floor(second / 60);
     const sec = Math.floor(second % 60);
-    clockDiv.innerHTML = `Time: ${min < 10 ? "0" : ""}${min}:${
+    clockDiv.innerHTML = `Countdown - ${min < 10 ? "0" : ""}${min}:${
       sec < 10 ? "0" : ""
     }${sec}`;
   }
 
   function endTime() {
-    clockDiv.innerHTML = "Level up";
+    // console.log(`time @ end of timer: ${time}`);
+    clockDiv.innerHTML = "!!!! Level up  !!!!";
   }
 }
