@@ -1,9 +1,9 @@
 # Asteroid Dodge!
 
 ## Introduction
-After many endless nights, you finally have a working JavaScript spaceship! And now you take flight but watch out! Asteroids ahead!!!
+After many endless nights, you finally have a working JavaScript spaceship! And now you get to experience the wonder of space exploration but watch out! A  a treachourous asteroid belt may end your journey prematurely!!!
 
-**Asteroid Dodge** uses plain HTML, CSS, and JavaScript to generate a web game where you control a Spaceship as it navigates falling meteors. Be careful, your spaceship can only withstand few impacts (3 to be exact)!
+**Asteroid Dodge** uses plain HTML, CSS, and JavaScript to generate a web game where you control a Spaceship as it navigates falling meteors. Navigate with care. Your spaceship is not indestructible and can only withstand a few impacts (3 to be exact)!
 
 ### Features
 - Designed entirely with HTML, CSS, and JavaScript
