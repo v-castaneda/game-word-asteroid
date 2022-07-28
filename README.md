@@ -1,9 +1,9 @@
 # Meteor Dodge!
 
 ## Introduction
-After many endless nights, you finally have a working JavaScript spaceship! And now you get to experience the wonder of space exploration but watch out! A  a treachourous asteroid belt may end your journey prematurely!!!
+After many endless nights, you finally have a working JavaScript spaceship! And now you get to experience the wonder of space exploration but watch out! A  treacherous asteroid belt may end your journey prematurely!!!
 
-**Meteor Dodge** uses plain HTML, CSS, and JavaScript to generate a web game where you control a Spaceship as it navigates falling meteors. Navigate with care; It seems like your spaceship has duct tape on its wings!
+**Meteor Dodge** uses plain HTML, CSS, and JavaScript to generate a web game where you control a Spaceship as it navigates falling meteors. Navigate with care; Your spaceship has duct tape on its wings!
 
 ### Features
 - Designed entirely with HTML, CSS, and JavaScript
