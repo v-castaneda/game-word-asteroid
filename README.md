@@ -1,4 +1,4 @@
-# Asteroid Dodge!
+# Metoer Dodge!
 
 ## Introduction
 After many endless nights, you finally have a working JavaScript spaceship! And now you get to experience the wonder of space exploration but watch out! A  a treachourous asteroid belt may end your journey prematurely!!!
